@@ -22,8 +22,8 @@
 <ul>
   <li 
     *ngFor="let user of $userService.getUsers(); let i = index"
-    [ngClass]="{ 'red': user.getActive() }"
-    (click)="$userService.toggleActive(user)">
+    [ngClass]="{ 'red': user.isHightlight() }"
+    (click)="toggleHighlight(user)">
     {{i+1}} : {{user.name}}
   </li>
 </ul>

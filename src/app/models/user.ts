@@ -2,8 +2,8 @@ export class User {
 
     constructor(
         public name: string,
-        public active: boolean = false
+        public hightlight: boolean = false
     ) { }
 
-    public getActive(): boolean { return this.active; }
+    public isHightlight(): boolean { return this.hightlight; }
 }

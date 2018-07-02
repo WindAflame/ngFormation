@@ -17,4 +17,5 @@ export class AppComponent {
 
   private $addUser(name: string) : void { this.$userService.addUser( new User(name) ); }
   private $onClick(event: MouseEvent): void { console.log(event); }
+  public toggleHighlight(user: User) { user.hightlight = !user.hightlight; }
 }

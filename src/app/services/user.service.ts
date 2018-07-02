@@ -15,5 +15,4 @@ export class UserService {
 
   public getUsers(): User[] { return this.users; }
   public addUser(user: User) { this.users.push(user); }
-  public toggleActive(user: User) { user.active = !user.active; }
 }
