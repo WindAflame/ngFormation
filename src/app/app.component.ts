@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './models/user';
 import { UserService } from './services/user.service';
+import { GenericUserService } from './genericservices/generic-user-service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   private $user: User = new User('John');
 
   constructor(
-    private $userService : UserService
+    private $userService : GenericUserService
   ) { }
 
   private $addUser(name: string) : void { this.$userService.addUser( new User(name) ); }

@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
+import { GenericUserService } from '../genericservices/generic-user-service';
 import { User } from '../models/user';
 
-@Injectable({
-  //3 (Other way to bind Service in module) :
-  providedIn: 'root'
-})
-export class UserService {
-
-  private users: User[];
+@Injectable()
+export class UserService extends GenericUserService {
 
   constructor() {
-    this.users = [];
+    super();
   }
 
-  public getUsers(): User[] { return this.users; }
   public addUser(user: User) { this.users.push(user); }
 }
