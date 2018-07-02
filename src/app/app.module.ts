@@ -10,7 +10,15 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    //1: UserService
+    /*2:
+    {
+      provide: UserService,
+      useClass: UserService  
+    }
+    */
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
