@@ -6,12 +6,18 @@
   
   <p (click)="$onClick($event)" [textContent]="$user?.name"></p>
 
-  <form>
+  <div>
     <label>Username : </label>
     <input type="text" #name>
 
     <button type="button" (click)="$addUser(name.value)">Add user</button>
-  </form>
+  </div>
+  <div>
+    <label>Filter : </label>
+    <input type="text" #filtername placeholder="by name">
+
+    <button type="button" (click)="setFilter(filtername.value)">Add filter</button>
+  </div>
 </div>
 
 <div [ngSwitch]="$userService.getUsers().length">
@@ -21,9 +27,9 @@
 
 <ul>
   <li 
-    *ngFor="let user of $userService.getUsers(); let i = index"
+    *ngFor="let user of $userService.getUsers() | usersByName:filter ; let i = index"
     [ngClass]="{ 'red': user.isHightlight() }"
     (click)="toggleHighlight(user)">
-    {{i+1}} : {{user.name}}
+    {{i+1}} : {{user | username}}
   </li>
 </ul>

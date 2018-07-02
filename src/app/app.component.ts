@@ -11,6 +11,7 @@ import { GenericUserService } from './genericservices/generic-user-service';
 export class AppComponent {
   private $title = 'app';
   private $user: User = new User('John');
+  public filter: string = '';
 
   constructor(
     private $userService : GenericUserService
@@ -19,4 +20,5 @@ export class AppComponent {
   private $addUser(name: string) : void { this.$userService.addUser( new User(name) ); }
   private $onClick(event: MouseEvent): void { console.log(event); }
   public toggleHighlight(user: User) { user.hightlight = !user.hightlight; }
+  public setFilter(name : string) { this.filter = name; }
 }

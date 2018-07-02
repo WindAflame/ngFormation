@@ -4,10 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GenericUserService } from './genericservices/generic-user-service';
 import { UserService } from './services/user.service';
+import { UserPipe } from './pipes/user.pipe';
+import { UsersByNamePipe } from './pipes/users-by-name.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserPipe,
+    UsersByNamePipe
   ],
   imports: [
     BrowserModule
