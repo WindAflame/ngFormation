@@ -1,0 +1,23 @@
+.bet-line div.data {
+    display: inline-block;
+}
+
+.bet-line div.index {
+    font-size: 80%;
+    font-style: italic;
+    display: inline-block;
+    border-right: 1px solid #dedede;
+}
+
+.bet-line {
+}
+
+.bet-line>div {
+    padding: .5rem 0rem;
+    border-bottom: 1px solid #dedede;
+    cursor: pointer;
+}
+
+.fa-trash:hover {
+    color: #ff4000;
+}

@@ -1,0 +1,57 @@
+<!--
+<table class="table">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Amount</th>
+      <th>Team A</th>
+      <th>Team B</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <app-bet *ngFor="let bet of bets; let i = $index;"
+    [index]="i"
+    [bet]="bet">
+    </app-bet>
+  </tbody>
+</table>
+-->
+<div class="app-box">
+    <h2>Bets</h2>
+  
+    <!-- <div *ngFor="let bet of userService.getAllBets(); let i = index">
+      <app-bet [bet]="bet" [index]="i"></app-bet>
+    </div> -->
+  
+    <div *ngFor="let user of $userService.getAll(); let i = index">
+      <h3>{{user.$name}}</h3>
+      <div *ngFor="let bet of user.getBets(); let i = index">
+        <div class="row bet-line">
+            <div class="col-6">
+              <div class="col-1 data index">
+                #{{index}}
+              </div>
+              <div class="col-3 data">
+                {{bet.$amount}}
+              </div>
+              <div class="col-3 data">
+                {{bet.$teama}}
+              </div>
+              <div class="col-3 data">
+                {{bet.$teamb}}
+              </div>
+              <div class="col-2 float-right data">
+                <button (click)='selected(bet)'>
+                  <i class="fa fa-info fa-lg "></i>
+                </button>
+          
+              </div>
+            </div>
+          </div>
+            
+      </div>
+    </div>
+  
+  
+  </div>

@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Num</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of $userService.getAll(); let i = index;">
+      <td>{{ i }}</td>
+      <td>{{ u.$name }}</td>
+    </tr>
+  </tbody>
+</table>

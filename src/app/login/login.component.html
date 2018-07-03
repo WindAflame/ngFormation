@@ -1,0 +1,15 @@
+<div [ngSwitch]="authService.isConnect()">
+    <div *ngSwitchCase="true">
+        <p>You are logged.</p>
+    </div>
+    <div *ngSwitchDefault="">
+        
+        <form>
+            <label>Username: </label>
+            <input type="text" #name>
+
+            <button type="button" (click)="onLogin(name.value)">Login</button>
+        </form>
+
+    </div>
+</div>  
