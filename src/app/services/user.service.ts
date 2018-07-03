@@ -7,6 +7,11 @@ export class UserService extends GenericUserService {
 
   constructor() {
     super();
+
+    this.users.push(new User('John'));
+    this.users.push(new User('Doe'));
+    this.users.push(new User('Kayzer'));
+    this.users.push(new User('Soze'));
   }
 
   addUser(user: User) {
@@ -14,6 +19,5 @@ export class UserService extends GenericUserService {
   }
 
   getAllBets() {
-    
   }
 }

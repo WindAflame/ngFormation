@@ -1,3 +1,6 @@
-<p>
-  login works!
-</p>
+<div class="app-box">
+  <h2>login</h2>
+  <label>username: </label>
+  <input type="text" #username>
+  <button (click)="login(username.value)">login</button>
+</div>

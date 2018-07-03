@@ -1,3 +1,5 @@
+import { BetsComponent } from './bets/bets.component';
+import { BetComponent } from './bet/bet.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -5,6 +7,13 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [
+    BetComponent,
+    BetsComponent,
+  ],
+  exports: [
+    BetComponent,
+    BetsComponent
+  ]
 })
 export class BetsModule { }

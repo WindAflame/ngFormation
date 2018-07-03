@@ -22,7 +22,6 @@ export class UserComponent implements OnInit {
 
   public onclick() {
     this.select.emit(this.user);
-    console.log(this.select);
   }
 
 }
