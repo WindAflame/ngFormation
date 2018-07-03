@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col">
+    <form class="form-inline" (ngSubmit)='submit()' [formGroup]="betform">
+      <div class="form-row">
+
+        <div class="form-group col-md-5">
+          <input class="form-control" type="number" placeholder="Amount..."  formControlName="amount">
+          <div *ngIf="amoutCtrl.dirty && amount.hasError('required')">Username is required</div>
+        </div>
+
+        <div class="form-group col-md-5">
+          <input class="form-control" type="text" placeholder="team A (your call)" formControlName="teama">
+        </div>
+
+        <div class="form-group col-md-5">
+          <input class="form-control" type="text" placeholder="team B (your call)" formControlName="teamb">
+        </div>
+
+        <div class="form-group col-md-auto">
+          <button class="form-control" [disabled]="betform.invalid" class="btn btn-primary">Bet !</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
