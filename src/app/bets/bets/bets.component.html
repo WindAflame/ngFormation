@@ -1,6 +1,8 @@
 <div class="app-box">
   <h2>Bets</h2>
 
+  <app-bet-form-code-advanced (newBet)="onNewBet()"></app-bet-form-code-advanced>
+
   <!-- <div *ngFor="let bet of userService.getAllBets(); let i = index">
     <app-bet [bet]="bet" [index]="i"></app-bet>
   </div> -->

@@ -1,0 +1,16 @@
+<h2>Sign up</h2>
+<form (ngSubmit)="submit(userForm.value)" #userForm="ngForm">
+  <div>
+    <label>Amount</label>
+    <input type="number" name="amount" ngModel>
+  </div>
+  <div>
+    <label>Team A</label>
+    <input name="teama" ngModel>
+  </div>
+  <div>
+    <label>Team B</label>
+    <input name="teamb" ngModel>
+  </div>
+  <button type="submit">Bet !</button>
+</form>

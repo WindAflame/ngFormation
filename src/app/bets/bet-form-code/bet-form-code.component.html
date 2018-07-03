@@ -1,0 +1,19 @@
+<p>
+  bet-form-code works!
+</p>
+<h2>Sign up</h2>
+<form class="form-inline" (ngSubmit)="submit()" [formGroup]="userForm">
+  <div class="form-group">
+    <label>Amount</label>
+    <input type="number" class="form-control" formControlName="amount">
+  </div>
+  <div class="form-group">
+    <label>Team A</label>
+    <input type="text" class="form-control" formControlName="teama">
+  </div>
+  <div class="form-group">
+    <label>Team B</label>
+    <input type="text" class="form-control" formControlName="teamb">
+  </div>
+  <button type="submit">Bet !</button>
+</form>
