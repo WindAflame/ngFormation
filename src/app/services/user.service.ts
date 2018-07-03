@@ -14,9 +14,11 @@ export class UserService extends GenericUserService {
     const bet2 = new Bet(1000, 'Team Liquid', 'Jin Air Green Wings');
     const bet3 = new Bet(1000, 'Millenium', 'SK Telecom T1');
     const bet4 = new Bet(1000, 'Jin Air Green Wings', 'SK Telecom T1');
+    const bet5 = new Bet(1000, 'Jin Air Green Wings', 'SK Telecom T1');
 
     const u1 = new User('John');
     u1.addBet(bet1);
+    u1.addBet(bet5);
     const u2 = new User('Doe');
     u2.addBet(bet2);
     const u3 = new User('Kayzer');
