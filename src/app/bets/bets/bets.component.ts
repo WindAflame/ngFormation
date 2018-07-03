@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GenericUserService } from '../../genericservices/generic-user-service';
 
 @Component({
   selector: 'app-bets',
@@ -15,6 +16,7 @@ export class BetsComponent implements OnInit {
   private bets: Array<Bet>;
 
   constructor(
+    public userService: GenericUserService
 
   ) { }
 
