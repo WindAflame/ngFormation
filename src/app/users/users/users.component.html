@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">  
+  <div>
+    <label>Username : </label>
+    <input type="text" #name>
+
+    <button type="button" (click)="$addUser(name.value)">Add user</button>
+  </div>
+  <div>
+    <label>Filter : </label>
+    <input type="text" #filtername placeholder="by name">
+
+    <button type="button" (click)="setFilter(filtername.value)">Add filter</button>
+  </div>
+</div>
+
+<div [ngSwitch]="$userService.getUsers().length">
+    <div *ngSwitchCase="0">no user number</div>
+    <div *ngSwitchDefault="">user number : {{ $userService.getUsers().length }}</div>
+</div>
+
+<ul>
+  <app-user
+    *ngFor="let user of $userService.getUsers() | usersByName:filter ; let i = index"
+    (select)="toggleHighlight($event)"
+    (delete)="delete($event)"
+    [index]="i"
+    [user]="user">
+  </app-user>
+</ul>

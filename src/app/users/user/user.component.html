@@ -1,6 +1,8 @@
 <li
   [ngClass]="{ 'red': user.isHightlight() }"
   [color]="'yellow'"
+  (click)="onSelect()"
   appHighlight>
     {{index+1}} : {{user | username}}
+    <button (click)="onDelete()">delete</button>
 </li>

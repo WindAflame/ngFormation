@@ -10,4 +10,5 @@ export class UserService extends GenericUserService {
   }
 
   public addUser(user: User) { this.users.push(user); }
+  public delUser(user: User) { this.users.splice( this.users.indexOf(user) ,1); }
 }

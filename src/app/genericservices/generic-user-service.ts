@@ -6,4 +6,5 @@ export abstract class GenericUserService {
   
     public getUsers(): User[] { return this.users; }
     abstract addUser(user: User);
+    abstract delUser(user: User);
 }

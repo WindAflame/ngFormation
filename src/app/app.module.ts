@@ -8,6 +8,7 @@ import { UserPipe } from './pipes/user.pipe';
 import { UsersByNamePipe } from './pipes/users-by-name.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UserComponent } from './users/user/user.component';
+import { UsersComponent } from './users/users/users.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UserComponent } from './users/user/user.component';
     UserPipe,
     UsersByNamePipe,
     HighlightDirective,
-    UserComponent
+    UserComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule
