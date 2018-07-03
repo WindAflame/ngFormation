@@ -21,12 +21,9 @@ export class HighlightDirective implements OnInit {
   }
 
   constructor(private ref: ElementRef) {
-    console.log(this.color);
   }
 
   ngOnInit(): void {
-    // The first place for use property binding
-    console.log(this.color);
     //this.ref.nativeElement.style.backgroundColor = this.color;
     this.previousColor = this.ref.nativeElement.style.backgroundColor;
   }

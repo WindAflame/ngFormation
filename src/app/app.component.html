@@ -26,12 +26,10 @@
 </div>
 
 <ul>
-  <li 
+  <app-user
     *ngFor="let user of $userService.getUsers() | usersByName:filter ; let i = index"
-    [ngClass]="{ 'red': user.isHightlight() }"
     (click)="toggleHighlight(user)"
-    [color]="'yellow'"
-    appHighlight>
-    {{i+1}} : {{user | username}}
-  </li>
+    [index]="i"
+    [user]="user">
+  </app-user>
 </ul>
