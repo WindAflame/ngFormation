@@ -1,0 +1,31 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <div>
+    <label>username: </label>
+    <input type="text" #name>
+  </div>
+
+  <div>
+    <label>filtername: </label>
+    <input type="text" #filtername>
+    <button (click)="onFilterChange(filtername.value)">filter</button>
+  </div>
+
+  <button (click)="addUser($event, name.value)"> add user</button>
+
+  <div *ngIf="userService.users.length > 0">users number: {{userService.users.length}}</div>
+  <div *ngIf="userService.users.length === 0">no users for the moment</div>
+
+  <div [ngSwitch]="userService.users.length">
+    <div *ngSwitchCase="0">no users for the moment</div>
+    <div *ngSwitchDefault>users number: {{userService.users.length}}</div>
+  </div>
+
+  <div *ngFor="let u of userService.users | usersByName:filter">
+    <app-user (click)="highlight($event)" (select)="highlight($event)" [user]="u"></app-user>
+  </div>
+
+</div>

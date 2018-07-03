@@ -1,0 +1,22 @@
+<div class="row bet-line">
+  <div class="col-6" appHighlight [bet]="bet">
+    <div class="col-1 data index">
+      #{{index}}
+    </div>
+    <div class="col-3 data">
+      {{bet.amount}}
+    </div>
+    <div class="col-3 data">
+      {{bet.teama}}
+    </div>
+    <div class="col-3 data">
+      {{bet.teamb}}
+    </div>
+    <div class="col-2 float-right data">
+      <button (click)='selected(bet)'>
+        <i class="fa fa-info fa-lg "></i>
+      </button>
+
+    </div>
+  </div>
+</div>
