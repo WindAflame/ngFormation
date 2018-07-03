@@ -29,7 +29,9 @@
   <li 
     *ngFor="let user of $userService.getUsers() | usersByName:filter ; let i = index"
     [ngClass]="{ 'red': user.isHightlight() }"
-    (click)="toggleHighlight(user)">
+    (click)="toggleHighlight(user)"
+    [color]="'yellow'"
+    appHighlight>
     {{i+1}} : {{user | username}}
   </li>
 </ul>

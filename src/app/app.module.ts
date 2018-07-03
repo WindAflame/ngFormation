@@ -6,12 +6,14 @@ import { GenericUserService } from './genericservices/generic-user-service';
 import { UserService } from './services/user.service';
 import { UserPipe } from './pipes/user.pipe';
 import { UsersByNamePipe } from './pipes/users-by-name.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserPipe,
-    UsersByNamePipe
+    UsersByNamePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule
