@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from './models/user';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,10 @@ export class AppComponent implements OnInit {
 
   title = 'super  bets';
 
-  constructor(public auth: AuthService) {
+  constructor(
+    public auth: AuthService,
+    private router: Router
+  ) {
 
 
   }

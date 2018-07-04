@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Bet } from './../models/bet';
@@ -10,9 +11,13 @@ import { GenericUserService } from '../genericservices/generic-user-service';
 })
 export class UserRestService extends GenericUserService {
 
-  
 
-  constructor(private http: HttpClient) {
+
+
+  constructor(
+    private http: HttpClient,
+    private auth: AuthService
+  ) {
     super();
   }
 
@@ -27,6 +32,10 @@ export class UserRestService extends GenericUserService {
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>('http://192.168.153.101:10000/bets');
   }
-
+  addBet(bet: Bet) {
+    const user = this.auth.user;
+    user.addBet(bet);
+    this.http.post('http://192.168.153.101:10000/bets', user).subscribe();
+  }
 
 }

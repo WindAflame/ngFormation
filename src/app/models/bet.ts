@@ -1,4 +1,4 @@
-export class Bet {
+ export class Bet {
 
     constructor(
         public amount: number,

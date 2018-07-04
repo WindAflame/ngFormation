@@ -50,7 +50,7 @@ export class BetFormTemplateComponent implements OnInit {
     const nb = new Bet(0, '', '');
     Object.assign(nb, this.bet);
     this.resolve(nb);
-    this.newbet.emit(nb);
+    // this.newbet.emit(nb);
   }
 
 }

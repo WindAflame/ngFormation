@@ -54,7 +54,9 @@ export class BetsComponent implements OnInit {
 
 
   public addBet() {
-
+    this.betEditor.openModal().then(bet => {
+      this.userService.addBet(bet);
+    });
 
   }
 

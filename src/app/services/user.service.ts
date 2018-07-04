@@ -51,5 +51,8 @@ export class UserService extends GenericUserService {
     return Observable.of([]);
   }
 
+  addBet(bet: Bet) {
+  }
+
 
 }

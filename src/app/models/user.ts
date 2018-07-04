@@ -15,6 +15,7 @@ export class User {
     }
 
     public addBet(bet: Bet) {
+        this.bets.push(bet);
     }
 
     public getBets(): Array<Bet> {
