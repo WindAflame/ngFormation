@@ -11,6 +11,6 @@ export class AppComponent {
   title = 'super  bets';
 
   constructor(public auth: AuthService) {
-
+    
   }
 }

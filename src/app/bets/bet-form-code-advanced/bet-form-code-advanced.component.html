@@ -1,20 +1,37 @@
-<p>
-    bet-form-code works!
-  </p>
-  <h2>Sign up</h2>
-  <form class="form-inline" (ngSubmit)="submit()" [formGroup]="userForm">
-    <div class="form-group">
-      <label>Amount</label>
-      <input type="number" class="form-control" formControlName="amount">
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+
+<ng-template #template>
+
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Let's bet !</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="container">
+        <form class="form-inline" (ngSubmit)="submit()" [formGroup]="userForm">
+
+            <div class="form-group col-md-6">
+              <input type="number" class="form-control" placeholder="Amount..." formControlName="amount">
+            </div>
+
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="team A (your call)" formControlName="teama">
+            </div>   
+
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="team B (your call)" formControlName="teamb">
+            </div>
+        
+            <div class="form-group col-md-auto">
+              <button  class="form-control btn btn-primary"  [disabled]="userForm.invalid">Bet !</button>
+            </div>
+          
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Team A</label>
-      <input type="text" class="form-control" formControlName="teama">
-    </div>
-    <div class="form-group">
-      <label>Team B</label>
-      <input type="text" class="form-control" formControlName="teamb">
-    </div>
-    <button type="submit" [disabled]="userForm.invalid">Bet !</button>
-  </form>
+  </div>
   
+</ng-template>

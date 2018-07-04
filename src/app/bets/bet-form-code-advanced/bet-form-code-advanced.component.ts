@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { Bet } from '../../models/bet';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-bet-form-code-advanced',
@@ -13,8 +14,10 @@ export class BetFormCodeAdvancedComponent implements OnInit {
   public newBet: EventEmitter<Bet> = new EventEmitter<Bet>();
   private userForm: FormGroup;
 
+  modalRef: BsModalRef;
   constructor(
-    formBuilder: FormBuilder
+    formBuilder: FormBuilder,
+    private modalService: BsModalService
   ) {
     this.userForm = formBuilder.group({
       amount: ['', [
@@ -26,6 +29,10 @@ export class BetFormCodeAdvancedComponent implements OnInit {
   }
 
   ngOnInit() {}
+ 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 
   static enoughMoney(control: FormControl) {
     const amount = control.value;

@@ -6,12 +6,14 @@ import { BetFormTemplateComponent } from './bet-form-template/bet-form-template.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BetFormCodeComponent } from './bet-form-code/bet-form-code.component';
 import { BetFormCodeAdvancedComponent } from './bet-form-code-advanced/bet-form-code-advanced.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
   declarations: [
     BetComponent,
