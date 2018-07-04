@@ -1,5 +1,6 @@
+import { BetFormTemplateComponent } from './../bet-form-template/bet-form-template.component';
 import { Bet } from './../../models/bet';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ViewChildren } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,6 +13,10 @@ import { GenericUserService } from '../../genericservices/generic-user-service';
 })
 export class BetsComponent implements OnInit {
 
+  @ViewChild('betEditor')
+  betEditor: BetFormTemplateComponent;
+
+
 
   private bets: Array<Bet>;
 
@@ -21,6 +26,10 @@ export class BetsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+
+  public addBet() {
   }
 
 

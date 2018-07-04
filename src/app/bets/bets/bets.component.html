@@ -1,6 +1,6 @@
 <div class="app-box">
   <h2> bets form template</h2>
-  <app-bet-form-template class="app-box"></app-bet-form-template>
+  <app-bet-form-template class="app-box" #betEditor></app-bet-form-template>
   <h2> bets form code</h2>
   <app-bet-form-code>class="app-box"</app-bet-form-code>
 
@@ -13,7 +13,7 @@
   <div *ngFor="let user of userService.users">
     <h3>{{user.name}}</h3>
     <div *ngFor="let bet of user.bets; let i = index">
-      <app-bet [bet]="bet" [index]="i"></app-bet>
+      <app-bet #bet [bet]="bet" [index]="i"></app-bet>
     </div>
   </div>
 
