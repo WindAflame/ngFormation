@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { GenericUserService } from '../../genericservices/generic-user-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -16,12 +17,14 @@ export class UsersComponent implements OnInit {
 
 
   constructor(
-    public userService: GenericUserService
+    public userService: GenericUserService,
+    public router: Router
   ) {
 
   }
 
   ngOnInit() {
+    this.userService.getAllUsers();
   }
 
 
@@ -32,7 +35,7 @@ export class UsersComponent implements OnInit {
   public highlight(user: User) {
     // user.highlight = !user.highlight;
 
-    console.log(user);
+    this.router.navigate(['users/'+user.name])
   }
 
   public onFilterChange(filter: string) {

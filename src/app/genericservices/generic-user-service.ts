@@ -6,6 +6,6 @@ export abstract class GenericUserService {
     abstract addUser(user: User);
     abstract addBet(bet: Bet);
     abstract getAllBets(): Array<Bet> | Promise<Bet[]> | Observable<Bet[]>;
-    abstract getAllUsers(): Array<Bet> | Observable<User[]>;
+    abstract getAllUsers(): Array<User> | Observable<User[]>;
 
 }

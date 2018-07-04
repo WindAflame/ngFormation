@@ -14,17 +14,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './public/login/login.component';
 import { GenericUserService } from './genericservices/generic-user-service';
 import { LoginGuard } from './guards/login.guard';
-
-
-export const ROUTES: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/login' },
-  { path: 'login', component: LoginComponent },
-  { path: 'users', component: UsersComponent, canActivate: [LoginGuard] },
-  { path: 'bets', component: BetsComponent, canActivate: [LoginGuard] },
-
-
-  { path: '**', component: ErrorComponent }
-];
+import { APP_ROUTES } from './app.routes';
 
 
 @NgModule({
@@ -40,7 +30,7 @@ export const ROUTES: Routes = [
     UserModule,
     BetsModule,
 
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [
     {

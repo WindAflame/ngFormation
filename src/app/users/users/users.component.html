@@ -9,10 +9,16 @@
   <div [ngSwitch]="userService.users.length">
     <div *ngSwitchCase="0">no users for the moment</div>
     <div *ngSwitchDefault>users number: {{userService.users.length}}</div>
-  </div>
+  </div> -->
 
   <div *ngFor="let u of userService.users | usersByName:filter">
     <app-user (select)="highlight($event)" [user]="u"></app-user>
-  </div> -->
+  </div>
+
+  <div class="app-box">
+    <h3>sub router oultet / betslist</h3>
+    <router-outlet></router-outlet>
+
+  </div>
 
 </div>

@@ -30,7 +30,16 @@ export class UserRestService extends GenericUserService {
   }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>('http://192.168.153.101:10000/bets');
+    if (this.users.length < 1){
+      const o = this.http.get<User[]>('http://192.168.153.101:10000/bets')
+      o.subscribe(res => {
+        this.users = res;
+        console.log(this.users)
+      })
+      return o;
+    } else {
+      return Observable.of(this.users);
+    }
   }
   addBet(bet: Bet) {
     const user = this.auth.user;
