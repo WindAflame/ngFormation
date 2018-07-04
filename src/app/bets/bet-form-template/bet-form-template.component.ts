@@ -35,7 +35,7 @@ export class BetFormTemplateComponent implements OnInit {
   public submit() {
     this.resolve(this.bet);
 
-    
+
     console.log(this.bet);
     const nb = new Bet(0, '', '');
     Object.assign(nb, this.bet);
