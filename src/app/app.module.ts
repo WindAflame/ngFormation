@@ -10,8 +10,15 @@ import { LoginComponent } from './public/login/login.component';
 import { GenericUserService } from './genericservices/generic-user-service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserRestService } from './services/user-rest.service';
+import { RouterModule, Routes } from '@angular/router';
 import { BetsComponent } from './bets/bets/bets.component';
 import { UsersComponent } from './users/users/users.component';
+
+const route: Routes = [
+  { path: 'bets', component: BetsComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'login', component: LoginComponent }
+]
 
 @NgModule({
   declarations: [
@@ -21,6 +28,7 @@ import { UsersComponent } from './users/users/users.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(route),
 
     UserModule,
     BetsModule

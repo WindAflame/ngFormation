@@ -1,9 +1,24 @@
 
-<div class="app-box">
-    <h1>welcome to {{title}}</h1>
-    current user: {{auth.user.name}}
-</div>
-
-<app-login></app-login>
-<app-users></app-users>
-<app-bets></app-bets>
+<header>
+<nav class="navbar navbar-light bg-faded justify-content-between flex-nowrap flex-row">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <ul class="nav navbar-nav flex-row float-right">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link pr-3" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link pr-3" routerLink="bets">Bets</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="users">Users</a>
+        </li>
+    </ul>
+</nav>
+</header>
+<main>
+    <div class="app-box">
+        <h1>welcome to {{title}}</h1>
+        current user: {{auth.user.name}}
+    </div>
+    <router-outlet></router-outlet>
+</main>
