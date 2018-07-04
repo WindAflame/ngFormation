@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(username: string) {
-    this.auth.user = new User(username);
+    this.auth.login(new User(username));
   }
 
 }

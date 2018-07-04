@@ -13,17 +13,22 @@ import { UserRestService } from './services/user-rest.service';
 import { RouterModule, Routes } from '@angular/router';
 import { BetsComponent } from './bets/bets/bets.component';
 import { UsersComponent } from './users/users/users.component';
+import { LoginGuard } from './guards/login.guard';
+import { ErrorComponent } from './public/error/error.component';
 
 const route: Routes = [
-  { path: 'bets', component: BetsComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'login', component: LoginComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'bets', component: BetsComponent, canActivate: [LoginGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: ErrorComponent },
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
