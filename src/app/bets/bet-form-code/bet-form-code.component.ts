@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Bet } from '../../models/bet';
 
 @Component({
   selector: 'app-bet-form-code',
@@ -12,6 +13,8 @@ export class BetFormCodeComponent implements OnInit {
 
   amoutCtrl: FormControl;
 
+  @Output('newbet')
+  newbet: EventEmitter<Bet> = new EventEmitter<Bet>();
 
   constructor(fb: FormBuilder) {
 
@@ -35,7 +38,7 @@ export class BetFormCodeComponent implements OnInit {
 
 
   submit() {
-    console.log(this.betform.value);
+    this.newbet.emit(this.betform.value);
   }
   ngOnInit() {
   }

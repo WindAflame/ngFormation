@@ -24,11 +24,11 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
   }
 
-
+/*
   public addUser(event: MouseEvent, name: string) {
     this.userService.addUser(new User(name));
   }
-
+*/
   public highlight(user: User) {
     // user.highlight = !user.highlight;
 

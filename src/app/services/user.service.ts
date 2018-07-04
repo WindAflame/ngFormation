@@ -31,11 +31,12 @@ export class UserService extends GenericUserService {
     this.users.push(u3);
     this.users.push(u4);
   }
-
+/*
   addUser(user: User) {
     this.users.push(user);
   }
-
+*/
+  addBet(bet: Bet){}
 
   getAllBets(): Bet[] {
     const allBets = new Array<Bet>();
@@ -45,6 +46,10 @@ export class UserService extends GenericUserService {
       })
     );
     return allBets;
+  }
+
+  getAllUsers(): User[] {
+    return;
   }
 
 

@@ -8,6 +8,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './public/login/login.component';
 import { GenericUserService } from './genericservices/generic-user-service';
+import { HttpClientModule } from '@angular/common/http';
+import { UserRestService } from './services/user-rest.service';
+import { BetsComponent } from './bets/bets/bets.component';
+import { UsersComponent } from './users/users/users.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,7 @@ import { GenericUserService } from './genericservices/generic-user-service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
 
     UserModule,
     BetsModule
@@ -23,7 +28,7 @@ import { GenericUserService } from './genericservices/generic-user-service';
   providers: [
     {
       provide: GenericUserService,
-      useClass: UserService
+      useClass: UserRestService
     },
     AuthService
   ],
