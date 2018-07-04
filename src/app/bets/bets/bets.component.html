@@ -6,16 +6,19 @@
 
 
   <h2>Bets</h2>
-  <!-- <div *ngFor="let bet of userService.getAllBets(); let i = index">
-    <app-bet [bet]="bet" [index]="i"></app-bet>
-  </div> -->
+  <div *ngFor="let user of users | async; let i = index">
+    <h3>{{user.name}}</h3>
+    <div *ngFor="let bet of user.bets; let i = index">
+      <app-bet [bet]="bet" [index]="i"></app-bet>
+    </div>
+  </div>
 
-  <div *ngFor="let user of userService.users">
+  <!-- <div *ngFor="let user of userService.users">
     <h3>{{user.name}}</h3>
     <div *ngFor="let bet of user.bets; let i = index">
       <app-bet #bet [bet]="bet" [index]="i"></app-bet>
     </div>
-  </div>
+  </div> -->
 
 
 

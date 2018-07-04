@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.asyncObservable();
+    // this.asyncObservable();
   }
 
   public asyncObservable() {

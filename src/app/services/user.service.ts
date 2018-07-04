@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Bet } from './../models/bet';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
@@ -45,6 +46,9 @@ export class UserService extends GenericUserService {
       })
     );
     return allBets;
+  }
+  getAllUsers() {
+    return Observable.of([]);
   }
 
 

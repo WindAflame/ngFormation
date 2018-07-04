@@ -1,3 +1,4 @@
+import { UserRestService } from './services/user-rest.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { BetsModule } from './bets/bets.module';
@@ -25,7 +26,7 @@ import { GenericUserService } from './genericservices/generic-user-service';
   providers: [
     {
       provide: GenericUserService,
-      useClass: UserService
+      useClass: UserRestService
     },
     AuthService
   ],
