@@ -1,9 +1,19 @@
+<header>
 
-<div class="app-box">
-    <h1>welcome to {{title}}</h1>
-    current user: {{auth.user.name}}
-</div>
+  <nav class="navbar navbar-dark bg-dark">
+    {{title}}
+    <a class="navbar-brand" href="#" routerLink="/" routerLinkActive="selected-menu" [routerLinkActiveOptions]="{ exact: true }">login</a>
+    <a class="navbar-brand" href="#" routerLink="/bets" routerLinkActive="selected-menu">bets</a>
+    <a class="navbar-brand" href="#" routerLink="/users" routerLinkActive="selected-menu">users</a>
+  </nav>
+  current user: {{auth.user.name}}
 
-<app-login></app-login>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>designed by BetWorldCompany(c)</footer>
+
+<!-- <app-login></app-login>
 <app-users></app-users>
-<app-bets></app-bets>
+<app-bets></app-bets> -->
