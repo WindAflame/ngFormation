@@ -3,6 +3,7 @@ import { UserService } from './services/user.service';
 import { BetsModule } from './bets/bets.module';
 import { UserModule } from './users/user.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { GenericUserService } from './genericservices/generic-user-service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
 
     UserModule,
     BetsModule

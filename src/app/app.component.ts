@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/from';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +41,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.asyncObservable();
+    this.asyncObservable();
   }
 
   public asyncObservable() {
@@ -55,15 +57,16 @@ export class AppComponent implements OnInit {
     o
       .filter(v => v < 5)
       .subscribe(res => {
-        console.log('outside ' + res);
+        console.log('outside: ' + res);
       });
 
     o
       .subscribe(res => {
-        console.log('outside2 ' + res);
+        console.log('outside2: ' + res);
       });
 
-
+    Observable.of([]).subscribe(x => console.log(x));
+    Observable.from([]).subscribe(x => console.log(x));
 
   }
 
